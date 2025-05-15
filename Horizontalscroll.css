@@ -1,0 +1,165 @@
+.scroll-section {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 65, 108, 0.6),
+      /* RCB Red */ rgba(249, 212, 35, 0.6),
+      /* CSK Yellow */ rgba(0, 201, 255, 0.6),
+      /* MI Blue */ rgba(142, 45, 226, 0.6),
+      /* KKR Purple */ rgba(255, 106, 0, 0.6),
+      /* SRH Orange */ rgba(0, 255, 135, 0.6),
+      /* GT Green */ rgba(255, 78, 80, 0.6),
+      /* RR Red/Pink */ rgba(31, 162, 255, 0.6) /* DC Blue */
+    ),
+    linear-gradient(rgba(15, 12, 41, 0.9), rgba(36, 36, 62, 0.9)),
+    url("https://assets.iplt20.com/bcci/articles/1709708100_image.jpg")
+      no-repeat center center/cover;
+  background-blend-mode: overlay;
+  background-size: 300% 300%;
+  animation: neonBackground 10s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes neonBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Header, scroll-wrapper, team-card, etc. remain unchanged... */
+
+button:nth-child(1),
+button:nth-child(2) {
+  background: #ffffff !important;
+  color: #121212 !important;
+}
+
+.header {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  animation: fadeDown 1s ease-in-out;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+}
+
+.scroll-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding: 2rem;
+  width: 90vw;
+  max-height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.team-card {
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.3);
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 0.6s ease-in-out forwards;
+  opacity: 0;
+  color: white;
+}
+
+.team-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(0, 191, 255, 0.5);
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  animation: zoomIn 0.5s ease-in-out;
+  filter: drop-shadow(0 0 8px #00bfff);
+}
+
+.team-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00bfff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 0 10px #007bff;
+}
+
+button:nth-child(1) {
+  background: #0096ff; /* About button - blue */
+  color: #fff;
+}
+
+button:nth-child(2) {
+  background: #1e90ff; /* Squad button - slightly different blue */
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff;
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
